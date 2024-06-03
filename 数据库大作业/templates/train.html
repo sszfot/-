@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Train Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://pic.rmb.bdstatic.com/bjh/news/ed0eb06b4e77dcf58a9b8972f5746f69.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .button, .button-small {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .button:hover, .button-small:hover {
+            background-color: #0056b3;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .button-small {
+            padding: 5px 10px; /* Smaller button for table operations */
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.8);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .operations {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Train Management</h1>
+    <div>
+        <a href="{{ url_for('add_train') }}" class="button">Add New Train</a>
+        <a href="{{ url_for('hightrain') }}" class="button">View High-speed Trains</a>
+        <a href="{{ url_for('usualtrain') }}" class="button">View Usual Trains</a>
+    </div>
+    <table>
+        <tr>
+            <th>Train ID</th>
+            <th>Operations</th>
+        </tr>
+        {% for train in trains %}
+        <tr>
+            <td>{{ train[0] }}</td>
+            <td class="operations">
+                <a href="{{ url_for('edit_train', trainid=train[0] ) }}" class="button-small">Edit</a>
+                <form action="{{ url_for('delete_train', trainid=train[0] ) }}" method="post" style="display: inline;">
+                    <button type="submit" class="button-small" onclick="return confirm('Are you sure you want to delete this train?')">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="footer">
+        <a href="{{ url_for('index') }}" class="button-small">Back to Home</a>
+    </div>
+</body>
+</html>

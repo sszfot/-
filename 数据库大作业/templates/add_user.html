@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>Add user</title>
+</head>
+<body>
+    <h1>Add user</h1>
+    <div>
+        <form action='/user/add' method='POST'>
+			<label for='userid'>userid:</label>
+			<input type='number' id='userid' name='userid'><br>
+            <label for='username'>username:</label>
+            <input type='text' id='username' name='username'><br>
+            <label for='phonenumber'>phonenumber:</label>
+            <input type='text' id='phonenumber' name='phonenumber'><br>
+            <label for='age'>age:</label>
+            <input type='number' id='age' name='age'><br>
+            <label for='username'>teamname:</label>
+            <input type='text' id='teamname' name='teamname'><br>
+            <input type='submit' value='Add'>
+			<a href="{{ url_for('user') }}">cancel</a>
+        </form>
+    </div>
+</body>
+</html>

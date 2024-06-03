@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add trip</title>
+</head>
+<body>
+	<h1>Add trip</h1>
+	<form method="post" action="{{ url_for('add_trip') }}">
+		<label>tripid</label>
+		<input type="number" name="tripid"><br>
+		<label>startstation:</label>
+		<input type="text" name="startstation"><br>
+		<label>endstation:</label>
+		<input type="text" name="endstation"><br>
+		<label>starttime:</label>
+		<input type="text" name="starttime"><br>
+		<label>endtime:</label>
+		<input type="text" name="endtime"><br>
+		<input type="submit" value="Add">
+		<a href="{{ url_for('trip') }}">cancel</a>
+	</form>
+</body>
+</html>

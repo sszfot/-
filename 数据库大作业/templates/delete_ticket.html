@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Ticket</title>
+</head>
+<body>
+    <h1>Delete Ticket</h1>
+    <p>Are you sure you want to delete this ticket?</p>
+    <form method="post" action="{{ url_for('delete_ticket', ticketid=ticket[0]) }}">
+        <button type="submit">Delete</button>
+        <a href="{{ url_for('ticket') }}">Cancel</a>
+    </form>
+</body>
+</html>

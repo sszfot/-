@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit ticket</title>
+</head>
+<body>
+	<h1>Edit ticket</h1>
+	<form method="post" action="{{ url_for('edit_ticket', ticket=ticket[0]) }}">
+		<label for="ticketid">ticketid:</label>
+		<input type="number" name="ticketid" value="{{ ticket[0] }}"><br>
+		<label for="userid">userid:</label>
+		<input type="number" name="userid" value="{{ ticket[1] }}"><br>
+		<label for="tripid">tripid:</label>
+		<input type="number" name="tripid" value="{{ ticket[2] }}"><br>
+		<input type="submit" value="Save">
+		<a href="{{ url_for('ticket') }}">cancel</a>
+	</form>
+</body>
+</html>

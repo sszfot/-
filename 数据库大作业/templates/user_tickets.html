@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Tickets Overview</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            color: #0056b3;
+        }
+        table {
+            margin: 20px auto;
+            width: 90%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ddd;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Tickets Overview</h1>
+    <table>
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Ticket Count</th>
+        </tr>
+        {% for user_ticket in user_tickets %}
+        <tr>
+            <td>{{ user_ticket[0] }}</td>
+            <td>{{ user_ticket[1] }}</td>
+            <td>{{ user_ticket[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+    <div class="footer">
+        &copy; 2024 User Ticket Management. All rights reserved.
+    </div>
+</body>
+</html>

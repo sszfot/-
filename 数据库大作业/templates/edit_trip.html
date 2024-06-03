@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Edit trip</title>
+</head>
+<body>
+    <h1>Edit trip</h1>
+    <div>
+        <form action="{{ url_for('edit_trip', tripid=trip[0]) }}" method="POST">
+			<label for="tripid">tripid:</label>
+			<input type="tripid" name="tripid" value="{{trip[0]}}" ><br>
+            <label for="starttime">starttime:</label>
+            <input type="text" name="starttime" value={{trip[1]}}><br>
+            <label for="endtime">position:</label>
+            <input type="text" name="endtime" value={{trip[2]}}><br>
+			<input type="submit" value="Save">
+			<a href="{{ url_for('coach') }}">cancel</a>
+			
+        </form>
+    </div>
+</body>
+</html>

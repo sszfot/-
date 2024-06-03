@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Work1
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>数据库控制</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body>
+            <h1>数据库控制</h1>
+            <h2>插入</h2>
+            <form action="insert.php" method="post">
+                <label for="table_name">表名：</label>
+                <select name="table_name" id="table_name">
+                    <option value="user">user</option>
+                    <option value="ticket">ticket</option>
+                    <option value="train">train</option>
+                    <option value="trip">trip</option>
+                    <option value="hightrain">hightrain</option>
+                    <option value="usualtrain">usualtrain</option>
+                    <option value="station">station</option>
+                </select><br><br>
+                <label for="data">数据：</label>
+                <input type="text" name="data" id="data"><br><br>
+                <input type="submit" value="提交">
+            </form>
+            <h2>删除</h2>
+            <form action="delete.php" method="post">
+                <label for="table_name">表名：</label>
+                <select name="table_name" id="table_name">
+                    <option value="user">user</option>
+                    <option value="ticket">ticket</option>
+                    <option value="train">train</option>
+                    <option value="trip">trip</option>
+                    <option value="hightrain">hightrain</option>
+                    <option value="usualtrain">usualtrain</option>
+                    <option value="station">station</option>
+                </select><br><br>
+                <label for="condition">

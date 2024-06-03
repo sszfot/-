@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Usual Trains</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://pic.rmb.bdstatic.com/bjh/news/ed0eb06b4e77dcf58a9b8972f5746f69.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px #000;
+        }
+        div {
+            text-align: center;
+            margin: 20px;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            background-color: #FFFFFF;
+            padding: 8px 15px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px grey;
+            transition: background-color 0.2s;
+        }
+        a:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        img {
+            width: 100px; /* Adjust the size of the image */
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        li {
+            list-style-type: none; /* Removes bullet points from list items */
+            text-align: center;
+            margin-top: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Usual Train Management</h1>
+    <div>
+        <a href="{{ url_for('add_usualtrain') }}">Add Usual Train</a>
+        <img src="usualtrain.jpg" alt="Usual Train">
+    </div>
+    <table>
+        <tr>
+            <th>Train ID</th>
+            <th>Operations</th>
+        </

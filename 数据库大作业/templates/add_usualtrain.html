@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add usual-Speed Train</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label, input {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 300px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #5C87B2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4a6c8a;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add usual-Speed Train</h1>
+    <form method="post" action="{{ url_for('usualtrain') }}">
+        <label for="train_id">Train ID:</label>
+        <input type="text" id="train_id" name="train_id" required>
+
+        <label for="train_type">Train Type:</label>
+        <input type="text" id="train_type" name="train_type" required>
+
+        <label for="max_speed">Maximum Speed (km/h):</label>
+        <input type="number" id="max_speed" name="max_speed" required>
+
+        <input type="submit" value="Add Train">
+    </form>
+</body>
+</html>

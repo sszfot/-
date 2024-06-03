@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Tickets</title>
+</head>
+<body>
+    <h1>User Tickets</h1>
+    <table border="1">
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Ticket Count</th>
+        </tr>
+        {% for user_ticket in user_tickets %}
+        <tr>
+            <td>{{ user_ticket['userid'] }}</td>
+            <td>{{ user_ticket['username'] }}</td>
+            <td>{{ user_ticket['ticket_count'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
